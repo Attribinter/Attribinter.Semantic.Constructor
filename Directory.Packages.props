@@ -11,7 +11,6 @@
         <PackageVersion Include="Attribinter.Parameters.Constructor.DependencyInjection" Version="8.0.0-alpha.2" />
         <PackageVersion Include="Attribinter.Tests.Common" Version="8.0.0-alpha.11" />
 
-        <PackageVersion Include="Microsoft.CodeAnalysis.Common" Version="4.8.0" />
         <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
         <PackageVersion Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
         <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
