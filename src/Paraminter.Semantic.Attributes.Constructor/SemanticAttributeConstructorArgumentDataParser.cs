@@ -6,13 +6,13 @@ using Paraminter.Parameters;
 
 using System;
 
-/// <summary>Parses the attribute constructor arguments.</summary>
+/// <summary>Parses attribute constructor arguments.</summary>
 public sealed class SemanticAttributeConstructorArgumentDataParser : IArgumentDataParser<IConstructorParameter, ISemanticAttributeConstructorArgumentData, ISemanticAttributeConstructorInvocationData>
 {
     private readonly IConstructorParameterFactory ParameterFactory;
     private readonly ISemanticAttributeConstructorArgumentDataFactory ArgumentDataFactory;
 
-    /// <summary>Instantiates a <see cref="SemanticAttributeConstructorArgumentDataParser"/>, parsing the attribute constructor arguments.</summary>
+    /// <summary>Instantiates a <see cref="SemanticAttributeConstructorArgumentDataParser"/>, parsing attribute constructor arguments.</summary>
     /// <param name="parameterFactory">Handles creation of <see cref="IConstructorParameter"/>.</param>
     /// <param name="argumentDataFactory">Handles creation of <see cref="ISemanticAttributeConstructorArgumentData"/>.</param>
     public SemanticAttributeConstructorArgumentDataParser(IConstructorParameterFactory parameterFactory, ISemanticAttributeConstructorArgumentDataFactory argumentDataFactory)
