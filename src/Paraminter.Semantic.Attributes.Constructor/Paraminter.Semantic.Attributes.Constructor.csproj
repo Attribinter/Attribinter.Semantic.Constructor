@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+
+        <RootNamespace>Paraminter.Semantic</RootNamespace>
+
+        <Title>Paraminter.Semantic.Attributes.Constructor</Title>
+        <Description>Semantically parses .NET attribute constructor arguments.</Description>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Paraminter.Core" />
+        <PackageReference Include="Paraminter.Parameters.Constructor.Abstractions" />
+
+        <ProjectReference Include="..\Paraminter.Semantic.Attributes.Constructor.Abstractions\Paraminter.Semantic.Attributes.Constructor.Abstractions.csproj" />
+        <ProjectReference Include="..\Paraminter.Semantic.Attributes.Constructor.Core\Paraminter.Semantic.Attributes.Constructor.Core.csproj" />
+    </ItemGroup>
+
+</Project>

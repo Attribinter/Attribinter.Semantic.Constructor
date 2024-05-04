@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{722D769C-5718-4D30-93A4-C7021E259F84}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		tests\.editorconfig = tests\.editorconfig
+		Directory.Build.props = Directory.Build.props
+		src\Directory.Build.props = src\Directory.Build.props
+		Directory.Packages.props = Directory.Packages.props
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paraminter.Semantic.Attributes.Constructor.Core", "src\Paraminter.Semantic.Attributes.Constructor.Core\Paraminter.Semantic.Attributes.Constructor.Core.csproj", "{0E089AF0-DEAC-4DB1-BAA1-FA9C66AB6261}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paraminter.Semantic.Attributes.Constructor.Abstractions", "src\Paraminter.Semantic.Attributes.Constructor.Abstractions\Paraminter.Semantic.Attributes.Constructor.Abstractions.csproj", "{96429600-768F-4306-B8E4-994B03FD17F5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paraminter.Semantic.Attributes.Constructor", "src\Paraminter.Semantic.Attributes.Constructor\Paraminter.Semantic.Attributes.Constructor.csproj", "{44793621-9E1F-4ADC-AF94-C66EDECD1316}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paraminter.Semantic.Attributes.Constructor.DependencyInjection", "src\Paraminter.Semantic.Attributes.Constructor.DependencyInjection\Paraminter.Semantic.Attributes.Constructor.DependencyInjection.csproj", "{6F0A65AE-8B01-4DB2-9A97-0EB272B00223}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paraminter.Semantic.Attributes.Constructor.IntegrationTests", "tests\integration\Paraminter.Semantic.Attributes.Constructor.IntegrationTests\Paraminter.Semantic.Attributes.Constructor.IntegrationTests.csproj", "{A44FFA57-D48B-4497-A344-A600E29D41F3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paraminter.Semantic.Attributes.Constructor.UnitTests", "tests\unit\Paraminter.Semantic.Attributes.Constructor.UnitTests\Paraminter.Semantic.Attributes.Constructor.UnitTests.csproj", "{6A64C710-0A75-4805-A8F4-93CF52D496C6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E089AF0-DEAC-4DB1-BAA1-FA9C66AB6261}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E089AF0-DEAC-4DB1-BAA1-FA9C66AB6261}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E089AF0-DEAC-4DB1-BAA1-FA9C66AB6261}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E089AF0-DEAC-4DB1-BAA1-FA9C66AB6261}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96429600-768F-4306-B8E4-994B03FD17F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96429600-768F-4306-B8E4-994B03FD17F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96429600-768F-4306-B8E4-994B03FD17F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96429600-768F-4306-B8E4-994B03FD17F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44793621-9E1F-4ADC-AF94-C66EDECD1316}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44793621-9E1F-4ADC-AF94-C66EDECD1316}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44793621-9E1F-4ADC-AF94-C66EDECD1316}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44793621-9E1F-4ADC-AF94-C66EDECD1316}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F0A65AE-8B01-4DB2-9A97-0EB272B00223}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F0A65AE-8B01-4DB2-9A97-0EB272B00223}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F0A65AE-8B01-4DB2-9A97-0EB272B00223}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F0A65AE-8B01-4DB2-9A97-0EB272B00223}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A44FFA57-D48B-4497-A344-A600E29D41F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A44FFA57-D48B-4497-A344-A600E29D41F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A44FFA57-D48B-4497-A344-A600E29D41F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A44FFA57-D48B-4497-A344-A600E29D41F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A64C710-0A75-4805-A8F4-93CF52D496C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A64C710-0A75-4805-A8F4-93CF52D496C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A64C710-0A75-4805-A8F4-93CF52D496C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A64C710-0A75-4805-A8F4-93CF52D496C6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A91CDD24-91E9-46D6-8FCB-187DEEEB20A0}
+	EndGlobalSection
+EndGlobal
