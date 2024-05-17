@@ -10,7 +10,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Paraminter.Parameters.Constructor.DependencyInjection" />
+        <PackageReference Include="Paraminter.Parameters.Normal.DependencyInjection" />
 
         <ProjectReference Include="..\Paraminter.Semantic.Attributes.Constructor.Abstractions\Paraminter.Semantic.Attributes.Constructor.Abstractions.csproj" />
         <ProjectReference Include="..\Paraminter.Semantic.Attributes.Constructor.Core\Paraminter.Semantic.Attributes.Constructor.Core.csproj" />

@@ -6,8 +6,8 @@ using Paraminter.Parameters;
 
 internal interface IParserFixture
 {
-    public abstract IArgumentDataParser<IConstructorParameter, ISemanticAttributeConstructorArgumentData, ISemanticAttributeConstructorInvocationData> Sut { get; }
+    public abstract IArgumentDataParser<INormalParameter, ISemanticAttributeConstructorArgumentData, ISemanticAttributeConstructorInvocationData> Sut { get; }
 
-    public abstract Mock<IConstructorParameterFactory> ParameterFactoryMock { get; }
+    public abstract Mock<INormalParameterFactory> ParameterFactoryMock { get; }
     public abstract Mock<ISemanticAttributeConstructorArgumentDataFactory> ArgumentDataFactoryMock { get; }
 }
