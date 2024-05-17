@@ -32,7 +32,7 @@ public sealed class AddParaminterSemanticAttributeConstructor
     }
 
     [Fact]
-    public void IArgumentDataParser_ServiceCanBeResolved() => ServiceCanBeResolved<IArgumentDataParser<IConstructorParameter, ISemanticAttributeConstructorArgumentData, ISemanticAttributeConstructorInvocationData>>();
+    public void IArgumentDataParser_ServiceCanBeResolved() => ServiceCanBeResolved<IArgumentDataParser<INormalParameter, ISemanticAttributeConstructorArgumentData, ISemanticAttributeConstructorInvocationData>>();
 
     [Fact]
     public void ISemanticAttributeConstructorArgumentDataFactory_ServiceCanBeResolved() => ServiceCanBeResolved<ISemanticAttributeConstructorArgumentDataFactory>();
