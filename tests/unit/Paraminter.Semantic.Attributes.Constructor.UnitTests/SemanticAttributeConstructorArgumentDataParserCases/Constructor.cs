@@ -21,7 +21,7 @@ public sealed class Constructor
     [Fact]
     public void NullArgumentDataFactory_ThrowsArgumentNullException()
     {
-        var result = Record.Exception(() => Target(Mock.Of<INormalParameterFactory>(), null!));
+        var result = Record.Exception(() => Target(Mock.Of<IMethodParameterFactory>(), null!));
 
         Assert.IsType<ArgumentNullException>(result);
     }
@@ -29,10 +29,10 @@ public sealed class Constructor
     [Fact]
     public void ValidArguments_ReturnsParser()
     {
-        var result = Target(Mock.Of<INormalParameterFactory>(), Mock.Of<ISemanticAttributeConstructorArgumentDataFactory>());
+        var result = Target(Mock.Of<IMethodParameterFactory>(), Mock.Of<ISemanticAttributeConstructorArgumentDataFactory>());
 
         Assert.NotNull(result);
     }
 
-    private static SemanticAttributeConstructorArgumentDataParser Target(INormalParameterFactory parameterFactory, ISemanticAttributeConstructorArgumentDataFactory argumentDataFactory) => new(parameterFactory, argumentDataFactory);
+    private static SemanticAttributeConstructorArgumentDataParser Target(IMethodParameterFactory parameterFactory, ISemanticAttributeConstructorArgumentDataFactory argumentDataFactory) => new(parameterFactory, argumentDataFactory);
 }

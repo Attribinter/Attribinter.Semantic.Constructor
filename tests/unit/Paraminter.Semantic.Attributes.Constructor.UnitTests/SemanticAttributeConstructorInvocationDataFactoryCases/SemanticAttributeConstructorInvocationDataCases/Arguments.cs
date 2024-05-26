@@ -8,6 +8,8 @@ using Xunit;
 
 public sealed class Arguments
 {
+    private readonly IInvocationDataFixture Fixture = InvocationDataFixtureFactory.Create();
+
     [Fact]
     public void ReturnsSameAsConstructedWith()
     {
@@ -17,6 +19,4 @@ public sealed class Arguments
     }
 
     private IReadOnlyList<TypedConstant> Target() => Fixture.Sut.Arguments;
-
-    private readonly IInvocationDataFixture Fixture = InvocationDataFixtureFactory.Create();
 }

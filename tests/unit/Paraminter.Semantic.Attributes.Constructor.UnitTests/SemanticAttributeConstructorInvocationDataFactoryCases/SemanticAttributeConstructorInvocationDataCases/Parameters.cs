@@ -8,6 +8,8 @@ using Xunit;
 
 public sealed class Parameters
 {
+    private readonly IInvocationDataFixture Fixture = InvocationDataFixtureFactory.Create();
+
     [Fact]
     public void ReturnsSameAsConstructedWith()
     {
@@ -17,6 +19,4 @@ public sealed class Parameters
     }
 
     private IReadOnlyList<IParameterSymbol> Target() => Fixture.Sut.Parameters;
-
-    private readonly IInvocationDataFixture Fixture = InvocationDataFixtureFactory.Create();
 }

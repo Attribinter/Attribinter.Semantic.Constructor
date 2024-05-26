@@ -11,6 +11,8 @@ using Xunit;
 
 public sealed class Create
 {
+    private readonly IFactoryFixture Fixture = FactoryFixtureFactory.Create();
+
     [Fact]
     public void NullParameters_ThrowsArgumentNullException()
     {
@@ -36,6 +38,4 @@ public sealed class Create
     }
 
     private ISemanticAttributeConstructorInvocationData Target(IReadOnlyList<IParameterSymbol> parameters, IReadOnlyList<TypedConstant> arguments) => Fixture.Sut.Create(parameters, arguments);
-
-    private readonly IFactoryFixture Fixture = FactoryFixtureFactory.Create();
 }

@@ -7,21 +7,21 @@ using Paraminter.Parameters;
 using System;
 
 /// <summary>Parses attribute constructor arguments.</summary>
-public sealed class SemanticAttributeConstructorArgumentDataParser : IArgumentDataParser<INormalParameter, ISemanticAttributeConstructorArgumentData, ISemanticAttributeConstructorInvocationData>
+public sealed class SemanticAttributeConstructorArgumentDataParser : IArgumentDataParser<IMethodParameter, ISemanticAttributeConstructorArgumentData, ISemanticAttributeConstructorInvocationData>
 {
-    private readonly INormalParameterFactory ParameterFactory;
+    private readonly IMethodParameterFactory ParameterFactory;
     private readonly ISemanticAttributeConstructorArgumentDataFactory ArgumentDataFactory;
 
     /// <summary>Instantiates a <see cref="SemanticAttributeConstructorArgumentDataParser"/>, parsing attribute constructor arguments.</summary>
-    /// <param name="parameterFactory">Handles creation of <see cref="INormalParameter"/>.</param>
+    /// <param name="parameterFactory">Handles creation of <see cref="IMethodParameter"/>.</param>
     /// <param name="argumentDataFactory">Handles creation of <see cref="ISemanticAttributeConstructorArgumentData"/>.</param>
-    public SemanticAttributeConstructorArgumentDataParser(INormalParameterFactory parameterFactory, ISemanticAttributeConstructorArgumentDataFactory argumentDataFactory)
+    public SemanticAttributeConstructorArgumentDataParser(IMethodParameterFactory parameterFactory, ISemanticAttributeConstructorArgumentDataFactory argumentDataFactory)
     {
         ParameterFactory = parameterFactory ?? throw new ArgumentNullException(nameof(parameterFactory));
         ArgumentDataFactory = argumentDataFactory ?? throw new ArgumentNullException(nameof(argumentDataFactory));
     }
 
-    bool IArgumentDataParser<INormalParameter, ISemanticAttributeConstructorArgumentData, ISemanticAttributeConstructorInvocationData>.TryParse(IArgumentDataRecorder<INormalParameter, ISemanticAttributeConstructorArgumentData> recorder, ISemanticAttributeConstructorInvocationData invocationData)
+    bool IArgumentDataParser<IMethodParameter, ISemanticAttributeConstructorArgumentData, ISemanticAttributeConstructorInvocationData>.TryParse(IArgumentDataRecorder<IMethodParameter, ISemanticAttributeConstructorArgumentData> recorder, ISemanticAttributeConstructorInvocationData invocationData)
     {
         if (recorder is null)
         {
@@ -49,7 +49,7 @@ public sealed class SemanticAttributeConstructorArgumentDataParser : IArgumentDa
         return true;
     }
 
-    private bool TryRecordArgument(IArgumentDataRecorder<INormalParameter, ISemanticAttributeConstructorArgumentData> recorder, IParameterSymbol parameterSymbol, TypedConstant argumentValue)
+    private bool TryRecordArgument(IArgumentDataRecorder<IMethodParameter, ISemanticAttributeConstructorArgumentData> recorder, IParameterSymbol parameterSymbol, TypedConstant argumentValue)
     {
         var parameter = ParameterFactory.Create(parameterSymbol);
         var argumentData = ArgumentDataFactory.Create(argumentValue);

@@ -8,7 +8,7 @@ internal static class ParserFixtureFactory
 {
     public static IParserFixture Create()
     {
-        Mock<INormalParameterFactory> parameterFactoryMock = new();
+        Mock<IMethodParameterFactory> parameterFactoryMock = new();
         Mock<ISemanticAttributeConstructorArgumentDataFactory> argumentDataFactoryMock = new();
 
         SemanticAttributeConstructorArgumentDataParser sut = new(parameterFactoryMock.Object, argumentDataFactoryMock.Object);
@@ -18,12 +18,12 @@ internal static class ParserFixtureFactory
 
     private sealed class ParserFixture : IParserFixture
     {
-        private readonly IArgumentDataParser<INormalParameter, ISemanticAttributeConstructorArgumentData, ISemanticAttributeConstructorInvocationData> Sut;
+        private readonly IArgumentDataParser<IMethodParameter, ISemanticAttributeConstructorArgumentData, ISemanticAttributeConstructorInvocationData> Sut;
 
-        private readonly Mock<INormalParameterFactory> ParameterFactoryMock;
+        private readonly Mock<IMethodParameterFactory> ParameterFactoryMock;
         private readonly Mock<ISemanticAttributeConstructorArgumentDataFactory> ArgumentDataFactoryMock;
 
-        public ParserFixture(IArgumentDataParser<INormalParameter, ISemanticAttributeConstructorArgumentData, ISemanticAttributeConstructorInvocationData> sut, Mock<INormalParameterFactory> parameterFactoryMock, Mock<ISemanticAttributeConstructorArgumentDataFactory> argumentDataFactoryMock)
+        public ParserFixture(IArgumentDataParser<IMethodParameter, ISemanticAttributeConstructorArgumentData, ISemanticAttributeConstructorInvocationData> sut, Mock<IMethodParameterFactory> parameterFactoryMock, Mock<ISemanticAttributeConstructorArgumentDataFactory> argumentDataFactoryMock)
         {
             Sut = sut;
 
@@ -31,9 +31,9 @@ internal static class ParserFixtureFactory
             ArgumentDataFactoryMock = argumentDataFactoryMock;
         }
 
-        IArgumentDataParser<INormalParameter, ISemanticAttributeConstructorArgumentData, ISemanticAttributeConstructorInvocationData> IParserFixture.Sut => Sut;
+        IArgumentDataParser<IMethodParameter, ISemanticAttributeConstructorArgumentData, ISemanticAttributeConstructorInvocationData> IParserFixture.Sut => Sut;
 
-        Mock<INormalParameterFactory> IParserFixture.ParameterFactoryMock => ParameterFactoryMock;
+        Mock<IMethodParameterFactory> IParserFixture.ParameterFactoryMock => ParameterFactoryMock;
         Mock<ISemanticAttributeConstructorArgumentDataFactory> IParserFixture.ArgumentDataFactoryMock => ArgumentDataFactoryMock;
     }
 }
