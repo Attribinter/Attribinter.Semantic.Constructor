@@ -19,9 +19,9 @@ public static class ParaminterSemanticAttributeConstructorServices
             throw new ArgumentNullException(nameof(services));
         }
 
-        services.AddParaminterNormalParameters();
+        services.AddParaminterMethodParameters();
 
-        services.AddTransient<IArgumentDataParser<INormalParameter, ISemanticAttributeConstructorArgumentData, ISemanticAttributeConstructorInvocationData>, SemanticAttributeConstructorArgumentDataParser>();
+        services.AddTransient<IArgumentDataParser<IMethodParameter, ISemanticAttributeConstructorArgumentData, ISemanticAttributeConstructorInvocationData>, SemanticAttributeConstructorArgumentDataParser>();
 
         services.AddTransient<ISemanticAttributeConstructorArgumentDataFactory, SemanticAttributeConstructorArgumentDataFactory>();
         services.AddTransient<ISemanticAttributeConstructorInvocationDataFactory, SemanticAttributeConstructorInvocationDataFactory>();

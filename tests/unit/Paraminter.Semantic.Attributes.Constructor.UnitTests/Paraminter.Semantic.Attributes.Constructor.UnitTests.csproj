@@ -18,6 +18,7 @@
 
         <ProjectReference Include="..\..\..\src\Paraminter.Semantic.Attributes.Constructor.Abstractions\Paraminter.Semantic.Attributes.Constructor.Abstractions.csproj" />
         <ProjectReference Include="..\..\..\src\Paraminter.Semantic.Attributes.Constructor.Core\Paraminter.Semantic.Attributes.Constructor.Core.csproj" />
+        <ProjectReference Include="..\..\..\src\Paraminter.Semantic.Attributes.Constructor.DependencyInjection\Paraminter.Semantic.Attributes.Constructor.DependencyInjection.csproj" />
         <ProjectReference Include="..\..\..\src\Paraminter.Semantic.Attributes.Constructor\Paraminter.Semantic.Attributes.Constructor.csproj" />
     </ItemGroup>
 

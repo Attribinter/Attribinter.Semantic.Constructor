@@ -6,6 +6,8 @@ using Xunit;
 
 public sealed class Value
 {
+    private readonly IArgumentDataFixture Fixture = ArgumentDataFixtureFactory.Create();
+
     [Fact]
     public void ReturnsSameAsConstructedWith()
     {
@@ -15,6 +17,4 @@ public sealed class Value
     }
 
     private TypedConstant Target() => Fixture.Sut.Value;
-
-    private readonly IArgumentDataFixture Fixture = ArgumentDataFixtureFactory.Create();
 }

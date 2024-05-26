@@ -6,6 +6,8 @@ using Xunit;
 
 public sealed class Create
 {
+    private readonly IFactoryFixture Fixture = FactoryFixtureFactory.Create();
+
     [Fact]
     public void ReturnsArgumentData()
     {
@@ -17,6 +19,4 @@ public sealed class Create
     }
 
     private ISemanticAttributeConstructorArgumentData Target(TypedConstant value) => Fixture.Sut.Create(value);
-
-    private readonly IFactoryFixture Fixture = FactoryFixtureFactory.Create();
 }

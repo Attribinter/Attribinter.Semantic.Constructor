@@ -11,7 +11,7 @@
 
     <ItemGroup>
         <PackageReference Include="Paraminter.Core" />
-        <PackageReference Include="Paraminter.Parameters.Normal.Abstractions" />
+        <PackageReference Include="Paraminter.Parameters.Method.Abstractions" />
 
         <ProjectReference Include="..\Paraminter.Semantic.Attributes.Constructor.Abstractions\Paraminter.Semantic.Attributes.Constructor.Abstractions.csproj" />
         <ProjectReference Include="..\Paraminter.Semantic.Attributes.Constructor.Core\Paraminter.Semantic.Attributes.Constructor.Core.csproj" />

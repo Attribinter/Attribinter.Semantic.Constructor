@@ -12,6 +12,8 @@ using Xunit;
 
 public sealed class TryParse
 {
+    private readonly IParserFixture Fixture = ParserFixtureFactory.Create();
+
     [Fact]
     public void NullRecorder_ThrowsArgumentNullException()
     {
@@ -23,7 +25,7 @@ public sealed class TryParse
     [Fact]
     public void NullInvocationData_ThrowsArgumentNullException()
     {
-        var result = Record.Exception(() => Target(Mock.Of<IArgumentDataRecorder<INormalParameter, ISemanticAttributeConstructorArgumentData>>(), null!));
+        var result = Record.Exception(() => Target(Mock.Of<IArgumentDataRecorder<IMethodParameter, ISemanticAttributeConstructorArgumentData>>(), null!));
 
         Assert.IsType<ArgumentNullException>(result);
     }
@@ -38,7 +40,7 @@ public sealed class TryParse
         invocationDataMock.Setup(static (invocationData) => invocationData.Parameters).Returns([parameter]);
         invocationDataMock.Setup(static (invocationData) => invocationData.Arguments).Returns([]);
 
-        Mock<IArgumentDataRecorder<INormalParameter, ISemanticAttributeConstructorArgumentData>> recorderMock = new();
+        Mock<IArgumentDataRecorder<IMethodParameter, ISemanticAttributeConstructorArgumentData>> recorderMock = new();
 
         var result = Target(recorderMock.Object, invocationDataMock.Object);
 
@@ -57,7 +59,7 @@ public sealed class TryParse
         invocationDataMock.Setup(static (invocationData) => invocationData.Parameters).Returns([]);
         invocationDataMock.Setup(static (invocationData) => invocationData.Arguments).Returns([argument]);
 
-        Mock<IArgumentDataRecorder<INormalParameter, ISemanticAttributeConstructorArgumentData>> recorderMock = new();
+        Mock<IArgumentDataRecorder<IMethodParameter, ISemanticAttributeConstructorArgumentData>> recorderMock = new();
 
         var result = Target(recorderMock.Object, invocationDataMock.Object);
 
@@ -73,8 +75,8 @@ public sealed class TryParse
         var parameterSymbol2 = Mock.Of<IParameterSymbol>();
         var parameterSymbol3 = Mock.Of<IParameterSymbol>();
 
-        var parameter1 = Mock.Of<INormalParameter>();
-        var parameter2 = Mock.Of<INormalParameter>();
+        var parameter1 = Mock.Of<IMethodParameter>();
+        var parameter2 = Mock.Of<IMethodParameter>();
 
         var argumentValue1 = TypedConstantStore.GetNext();
         var argumentValue2 = TypedConstantStore.GetNext();
@@ -94,7 +96,7 @@ public sealed class TryParse
         invocationDataMock.Setup(static (invocationData) => invocationData.Parameters).Returns([parameterSymbol1, parameterSymbol2, parameterSymbol3]);
         invocationDataMock.Setup(static (invocationData) => invocationData.Arguments).Returns([argumentValue1, argumentValue2, argumentValue3]);
 
-        Mock<IArgumentDataRecorder<INormalParameter, ISemanticAttributeConstructorArgumentData>> recorderMock = new();
+        Mock<IArgumentDataRecorder<IMethodParameter, ISemanticAttributeConstructorArgumentData>> recorderMock = new();
 
         recorderMock.Setup((recorder) => recorder.TryRecordData(parameter1, argumentData1)).Returns(true);
         recorderMock.Setup((recorder) => recorder.TryRecordData(parameter2, argumentData2)).Returns(false);
@@ -115,8 +117,8 @@ public sealed class TryParse
         var parameterSymbol1 = Mock.Of<IParameterSymbol>();
         var parameterSymbol2 = Mock.Of<IParameterSymbol>();
 
-        var parameter1 = Mock.Of<INormalParameter>();
-        var parameter2 = Mock.Of<INormalParameter>();
+        var parameter1 = Mock.Of<IMethodParameter>();
+        var parameter2 = Mock.Of<IMethodParameter>();
 
         var argumentValue1 = TypedConstantStore.GetNext();
         var argumentValue2 = TypedConstantStore.GetNext();
@@ -135,7 +137,7 @@ public sealed class TryParse
         invocationDataMock.Setup(static (invocationData) => invocationData.Parameters).Returns([parameterSymbol1, parameterSymbol2]);
         invocationDataMock.Setup(static (invocationData) => invocationData.Arguments).Returns([argumentValue1, argumentValue2]);
 
-        Mock<IArgumentDataRecorder<INormalParameter, ISemanticAttributeConstructorArgumentData>> recorderMock = new();
+        Mock<IArgumentDataRecorder<IMethodParameter, ISemanticAttributeConstructorArgumentData>> recorderMock = new();
 
         recorderMock.Setup((recorder) => recorder.TryRecordData(parameter1, argumentData1)).Returns(true);
         recorderMock.Setup((recorder) => recorder.TryRecordData(parameter2, argumentData2)).Returns(true);
@@ -150,7 +152,5 @@ public sealed class TryParse
         recorderMock.VerifyNoOtherCalls();
     }
 
-    private bool Target(IArgumentDataRecorder<INormalParameter, ISemanticAttributeConstructorArgumentData> recorder, ISemanticAttributeConstructorInvocationData invocationData) => Fixture.Sut.TryParse(recorder, invocationData);
-
-    private readonly IParserFixture Fixture = ParserFixtureFactory.Create();
+    private bool Target(IArgumentDataRecorder<IMethodParameter, ISemanticAttributeConstructorArgumentData> recorder, ISemanticAttributeConstructorInvocationData invocationData) => Fixture.Sut.TryParse(recorder, invocationData);
 }
